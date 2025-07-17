@@ -1,72 +1,70 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
-/// @DnDHash : 12BA6FA8
-/// @DnDArgument : "expr" "keyboard_check(vk_right) -keyboard_check(vk_left)"
+/// @DnDHash : 0A3A1B10
+/// @DnDArgument : "expr" "keyboard_check(vk_right) - keyboard_check(vk_left)"
 /// @DnDArgument : "var" "move_x"
-move_x = keyboard_check(vk_right) -keyboard_check(vk_left);
+move_x = keyboard_check(vk_right) - keyboard_check(vk_left);
 
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
-/// @DnDHash : 58151116
-/// @DnDArgument : "expr" "move_x* walk_speed"
+/// @DnDHash : 7AF4A61F
+/// @DnDArgument : "expr" "move_x * walk_speed"
 /// @DnDArgument : "var" "move_x"
-move_x = move_x* walk_speed;
+move_x = move_x * walk_speed;
 
 /// @DnDAction : YoYo Games.Collisions.If_Object_At
 /// @DnDVersion : 1.1
-/// @DnDHash : 251F6E6B
+/// @DnDHash : 1A1B469D
 /// @DnDArgument : "x_relative" "1"
 /// @DnDArgument : "y" "2"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "object" "Obj_floor"
 /// @DnDSaveInfo : "object" "Obj_floor"
-var l251F6E6B_0 = instance_place(x + 0, y + 2, [Obj_floor]);if ((l251F6E6B_0 > 0)){	/// @DnDAction : YoYo Games.Common.Variable
+var l1A1B469D_0 = instance_place(x + 0, y + 2, [Obj_floor]);if ((l1A1B469D_0 > 0)){	/// @DnDAction : YoYo Games.Common.Variable
 	/// @DnDVersion : 1
-	/// @DnDHash : 253AC527
-	/// @DnDParent : 251F6E6B
+	/// @DnDHash : 24928309
+	/// @DnDParent : 1A1B469D
 	/// @DnDArgument : "var" "move_y"
 	move_y = 0;
 
 	/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Pressed
 	/// @DnDVersion : 1
-	/// @DnDHash : 553D002F
-	/// @DnDParent : 251F6E6B
-	var l553D002F_0;l553D002F_0 = keyboard_check_pressed(vk_space);if (l553D002F_0){	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDHash : 292B5307
+	/// @DnDParent : 1A1B469D
+	var l292B5307_0;l292B5307_0 = keyboard_check_pressed(vk_space);if (l292B5307_0){	/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
-		/// @DnDHash : 0F766B91
-		/// @DnDParent : 553D002F
+		/// @DnDHash : 7FA905A1
+		/// @DnDParent : 292B5307
 		/// @DnDArgument : "expr" "-jump_speed"
 		/// @DnDArgument : "var" "move_y"
-		move_y = -jump_speed;}
+		move_y = -jump_speed;}}
 
-	/// @DnDAction : YoYo Games.Common.Else
+/// @DnDAction : YoYo Games.Common.Else
+/// @DnDVersion : 1
+/// @DnDHash : 51D7741C
+else{	/// @DnDAction : YoYo Games.Common.If_Variable
 	/// @DnDVersion : 1
-	/// @DnDHash : 012310C6
-	/// @DnDParent : 251F6E6B
-	else{	/// @DnDAction : YoYo Games.Common.If_Variable
+	/// @DnDHash : 0C34A50C
+	/// @DnDParent : 51D7741C
+	/// @DnDArgument : "var" "move_y"
+	/// @DnDArgument : "op" "1"
+	/// @DnDArgument : "value" "10"
+	if(move_y < 10){	/// @DnDAction : YoYo Games.Common.Variable
 		/// @DnDVersion : 1
-		/// @DnDHash : 1F296E48
-		/// @DnDParent : 012310C6
+		/// @DnDHash : 2772200F
+		/// @DnDParent : 0C34A50C
+		/// @DnDArgument : "expr" "1"
+		/// @DnDArgument : "expr_relative" "1"
 		/// @DnDArgument : "var" "move_y"
-		/// @DnDArgument : "op" "1"
-		/// @DnDArgument : "value" "10"
-		if(move_y < 10){	/// @DnDAction : YoYo Games.Common.Variable
-			/// @DnDVersion : 1
-			/// @DnDHash : 31A546B0
-			/// @DnDParent : 1F296E48
-			/// @DnDArgument : "expr" "1"
-			/// @DnDArgument : "expr_relative" "1"
-			/// @DnDArgument : "var" "move_y"
-			move_y += 1;}}
+		move_y += 1;}}
 
-	/// @DnDAction : YoYo Games.Movement.move_and_collide
-	/// @DnDVersion : 1
-	/// @DnDHash : 54FD6590
-	/// @DnDParent : 251F6E6B
-	/// @DnDArgument : "xvel" "move_x"
-	/// @DnDArgument : "yvel" "move_y"
-	/// @DnDArgument : "maxxmove" "walk_speed"
-	/// @DnDArgument : "maxymove" "jump_speed"
-	/// @DnDArgument : "object" "Obj_floor"
-	/// @DnDSaveInfo : "object" "Obj_floor"
-	move_and_collide(move_x, move_y, Obj_floor,4,0,0,walk_speed,jump_speed);}
+/// @DnDAction : YoYo Games.Movement.move_and_collide
+/// @DnDVersion : 1
+/// @DnDHash : 612AEA3D
+/// @DnDArgument : "xvel" "move_x"
+/// @DnDArgument : "yvel" "move_y"
+/// @DnDArgument : "maxxmove" "walk_speed"
+/// @DnDArgument : "maxymove" "jump_speed"
+/// @DnDArgument : "object" "Obj_floor"
+/// @DnDSaveInfo : "object" "Obj_floor"
+move_and_collide(move_x, move_y, Obj_floor,4,0,0,walk_speed,jump_speed);
