@@ -66,3 +66,15 @@ else{	/// @DnDAction : YoYo Games.Common.If_Variable
 /// @DnDArgument : "maxymove" "jump_speed"
 /// @DnDArgument : "object" "collison_tilemap"
 move_and_collide(move_x, move_y, collison_tilemap,4,0,0,walk_speed,jump_speed);
+
+/// @DnDAction : YoYo Games.Collisions.If_Object_At
+/// @DnDVersion : 1.1
+/// @DnDHash : 61BD7F6B
+/// @DnDArgument : "y" "2"
+/// @DnDArgument : "y_relative" "1"
+/// @DnDArgument : "object" "collison_death"
+var l61BD7F6B_0 = instance_place(0, y + 2, [collison_death]);if ((l61BD7F6B_0 > 0)){	/// @DnDAction : YoYo Games.Rooms.Restart_Room
+	/// @DnDVersion : 1
+	/// @DnDHash : 5D04331A
+	/// @DnDParent : 61BD7F6B
+	room_restart();}
