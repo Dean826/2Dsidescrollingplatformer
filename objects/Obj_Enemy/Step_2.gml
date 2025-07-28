@@ -8,9 +8,9 @@ if(move_y < 0){	/// @DnDAction : YoYo Games.Instances.Set_Sprite
 	/// @DnDHash : 6465E8E5
 	/// @DnDParent : 740896B5
 	/// @DnDArgument : "imageind_relative" "1"
-	/// @DnDArgument : "spriteind" "Spr_Player_jump"
-	/// @DnDSaveInfo : "spriteind" "Spr_Player_jump"
-	sprite_index = Spr_Player_jump;
+	/// @DnDArgument : "spriteind" "Spr_Enemy_jump"
+	/// @DnDSaveInfo : "spriteind" "Spr_Enemy_jump"
+	sprite_index = Spr_Enemy_jump;
 	image_index += 0;}
 
 /// @DnDAction : YoYo Games.Collisions.If_Object_At
@@ -32,9 +32,9 @@ var l384C659F_0 = instance_place(x + 0, y + 2, [collison_tilemap]);if ((l384C65
 		/// @DnDHash : 1759680B
 		/// @DnDParent : 668A822C
 		/// @DnDArgument : "imageind_relative" "1"
-		/// @DnDArgument : "spriteind" "Spr_player_walk"
-		/// @DnDSaveInfo : "spriteind" "Spr_player_walk"
-		sprite_index = Spr_player_walk;
+		/// @DnDArgument : "spriteind" "Spr_enemy_walk"
+		/// @DnDSaveInfo : "spriteind" "Spr_enemy_walk"
+		sprite_index = Spr_enemy_walk;
 		image_index += 0;
 	
 		/// @DnDAction : YoYo Games.Instances.Sprite_Scale
@@ -58,9 +58,9 @@ var l384C659F_0 = instance_place(x + 0, y + 2, [collison_tilemap]);if ((l384C65
 		/// @DnDHash : 6A080BED
 		/// @DnDParent : 55888CA1
 		/// @DnDArgument : "imageind_relative" "1"
-		/// @DnDArgument : "spriteind" "Spr_player_walk"
-		/// @DnDSaveInfo : "spriteind" "Spr_player_walk"
-		sprite_index = Spr_player_walk;
+		/// @DnDArgument : "spriteind" "Spr_enemy_walk"
+		/// @DnDSaveInfo : "spriteind" "Spr_enemy_walk"
+		sprite_index = Spr_enemy_walk;
 		image_index += 0;
 	
 		/// @DnDAction : YoYo Games.Instances.Sprite_Scale
@@ -81,7 +81,7 @@ var l384C659F_0 = instance_place(x + 0, y + 2, [collison_tilemap]);if ((l384C65
 		/// @DnDHash : 21C76F37
 		/// @DnDParent : 65072E7A
 		/// @DnDArgument : "imageind_relative" "1"
-		/// @DnDArgument : "spriteind" "Spr_player_idle"
-		/// @DnDSaveInfo : "spriteind" "Spr_player_idle"
-		sprite_index = Spr_player_idle;
+		/// @DnDArgument : "spriteind" "Spr_enemy"
+		/// @DnDSaveInfo : "spriteind" "Spr_enemy"
+		sprite_index = Spr_enemy;
 		image_index += 0;}}

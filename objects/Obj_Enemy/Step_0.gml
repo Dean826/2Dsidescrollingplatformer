@@ -1,16 +1,18 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 0A3A1B10
+/// @DnDDisabled : 1
 /// @DnDArgument : "expr" "keyboard_check(vk_right) - keyboard_check(vk_left)"
 /// @DnDArgument : "var" "move_x"
-move_x = keyboard_check(vk_right) - keyboard_check(vk_left);
+
 
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 7AF4A61F
+/// @DnDDisabled : 1
 /// @DnDArgument : "expr" "move_x * walk_speed"
 /// @DnDArgument : "var" "move_x"
-move_x = move_x * walk_speed;
+
 
 /// @DnDAction : YoYo Games.Collisions.If_Object_At
 /// @DnDVersion : 1.1
@@ -29,14 +31,15 @@ var l1A1B469D_0 = instance_place(x + 0, y + 2, [collison_tilemap]);if ((l1A1B46
 	/// @DnDAction : YoYo Games.Mouse & Keyboard.If_Key_Pressed
 	/// @DnDVersion : 1
 	/// @DnDHash : 292B5307
+	/// @DnDDisabled : 1
 	/// @DnDParent : 1A1B469D
-	var l292B5307_0;l292B5307_0 = keyboard_check_pressed(vk_space);if (l292B5307_0){	/// @DnDAction : YoYo Games.Common.Variable
-		/// @DnDVersion : 1
-		/// @DnDHash : 7FA905A1
-		/// @DnDParent : 292B5307
-		/// @DnDArgument : "expr" "-jump_speed"
-		/// @DnDArgument : "var" "move_y"
-		move_y = -jump_speed;}}
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 7FA905A1
+	/// @DnDDisabled : 1
+	/// @DnDParent : 292B5307
+	/// @DnDArgument : "expr" "-jump_speed"
+	/// @DnDArgument : "var" "move_y"}
 
 /// @DnDAction : YoYo Games.Common.Else
 /// @DnDVersion : 1
@@ -73,8 +76,8 @@ move_and_collide(move_x, move_y, collison_tilemap,4,0,0,walk_speed,jump_speed);
 /// @DnDArgument : "y" "2"
 /// @DnDArgument : "y_relative" "1"
 /// @DnDArgument : "object" "collison_death"
-var l61BD7F6B_0 = instance_place(0, y + 2, [collison_death]);if ((l61BD7F6B_0 > 0)){	/// @DnDAction : YoYo Games.Rooms.Restart_Room
+var l61BD7F6B_0 = instance_place(0, y + 2, [collison_death]);if ((l61BD7F6B_0 > 0)){	/// @DnDAction : YoYo Games.Instances.Destroy_Instance
 	/// @DnDVersion : 1
-	/// @DnDHash : 5D04331A
+	/// @DnDHash : 3226BD04
 	/// @DnDParent : 61BD7F6B
-	room_restart();}
+	instance_destroy();}
